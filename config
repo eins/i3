@@ -221,9 +221,9 @@ hide_edge_borders none
 default_orientation horizontal
 
 ## scrot screenshots
-## fullscreen screenshoot [PrnScr]
+## fullscreen shoot [PrnScr]
 bindsym Print exec --no-startup-id scrot f-'%s_$wx$h.png' -e 'mv $f ~/screenshots/'
-## window screenshoot [shift+PrnScr]
+## window shoot [shift+PrnScr]
 bindsym shift+Print exec scrot -u u-'%s_$wx$h.png' -e 'mv $f ~/screenshots/'
 ## select windows screenshoot [Mod+Shift+s]
 bindsym --release $mod+shift+s exec scrot -s w-'%s_$wx$h.png' -e 'mv $f ~/screenshots/cut/'
