@@ -1,0 +1,234 @@
+#+FNAME: ~/.config/i3/config
+## i3 config file (v4)
+
+set $mod Mod4
+
+## No font size for fancy frames or title bar
+font pango:monospace 0
+
+## use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier $mod
+
+## start a terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal
+
+## kill focused window
+bindsym $mod+Shift+x kill
+
+## start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb #AAC1DE  -nf #000000 -sb #C84065"
+
+## workspaces + monitors
+#workspace 1 output HDMI-0
+#workspace 2 output HDMI-0
+#workspace 5 output VGA-0
+#workspace 7 output VGA-0
+#workspace 22 output VGA-0
+
+## change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+## change focus
+bindsym $mod+u workspace prev
+bindsym $mod+i workspace prev_on_output
+bindsym $mod+o workspace next_on_output
+bindsym $mod+p workspace next
+
+## switch workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+a workspace back_and_forth
+bindsym $mod+Shift+a move container to workspace back_and_forth; workspace back_and_forth
+
+## move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+## split in horizontal orientation
+bindsym $mod+h split h
+## split in vertical orientation
+bindsym $mod+v split v
+
+## enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+f fullscreen toggle global
+
+## change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+## toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+## focus the parent container
+bindsym $mod+n focus parent
+bindsym $mod+Shift+n focus child
+
+## focus the child container
+#bindsym Mod1+d focus child
+
+## move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# ####################################################
+## transfer entire workspaces to a differen monitor
+# ####################################################
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
+## Define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+set $ws21 "21"
+set $ws22 "22"
+
+### enable floating for one app
+assign [Class="feh"] $ws7
+assign [Class="mpv"] $ws22
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+F1 workspace $ws11
+bindsym $mod+F2 workspace $ws12
+bindsym $mod+F3 workspace $ws13
+bindsym $mod+F4 workspace $ws14
+bindsym $mod+F5 workspace $ws15
+bindsym $mod+F6 workspace $ws16
+bindsym $mod+F7 workspace $ws17
+bindsym $mod+F8 workspace $ws18
+bindsym $mod+F9 workspace $ws19
+bindsym $mod+F10 workspace $ws20
+bindsym $mod+F11 workspace $ws21
+bindsym $mod+F12 workspace $ws22
+
+## move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+F1 move container to workspace $ws11
+bindsym $mod+Shift+F2 move container to workspace $ws12
+bindsym $mod+Shift+F3 move container to workspace $ws13
+bindsym $mod+Shift+F4 move container to workspace $ws14
+bindsym $mod+Shift+F5 move container to workspace $ws15
+bindsym $mod+Shift+F6 move container to workspace $ws16
+bindsym $mod+Shift+F7 move container to workspace $ws17
+bindsym $mod+Shift+F8 move container to workspace $ws18
+bindsym $mod+Shift+F9 move container to workspace $ws19
+bindsym $mod+Shift+F10 move container to workspace $ws20
+bindsym $mod+Shift+F11 move container to workspace $ws21
+bindsym $mod+Shift+F12 move container to workspace $ws22
+
+
+## reload the configuration file
+bindsym $mod+Shift+c reload
+## restart i3 inplace 
+bindsym $mod+Shift+r restart
+## exit i3 (logs you out of your X session)
+bindsym $mod+Shift+q exec i3-msg exit
+
+## resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym $left       resize shrink width 10 px or 10 ppt
+	bindsym $down       resize grow height 10 px or 10 ppt
+	bindsym $up         resize shrink height 10 px or 10 ppt
+	bindsym $right      resize grow width 10 px or 10 ppt
+
+   ## same bindings, but for the arrow keys
+	bindsym Left        resize shrink width 10 px or 10 ppt
+	bindsym Down        resize grow height 10 px or 10 ppt
+	bindsym Up          resize shrink height 10 px or 10 ppt
+	bindsym Right       resize grow width 10 px or 10 ppt
+
+	## back to normal: Enter or Escape or Mod1+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Mod1+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+## i3bar 
+bar {
+	status_command i3status
+	font pango:monospace 8
+	position top
+	mode hide
+	colors {
+	    background #000000
+	    statusline #ffffff
+
+       ## class               #border #backgr #text
+	    focused_workspace    #4c7899 #63a0ff #000000
+	    active_workspace     #333333 #5f676a #ffffff
+	    inactive_workspace   #222222 #333333 #888888
+	    urgent_workspace     #BD2727 #E79E27 #000000
+	}
+}
+
+#######################################################################
+## disable title
+new_window pixel 1
+new_float normal
+hide_edge_borders none
+#hide_edge_borders both
+
+default_orientation horizontal
+
+## scrot screenshots
+## fullscreen screenshoot [PrnScr]
+bindsym Print exec --no-startup-id scrot f-'%s_$wx$h.png' -e 'mv $f ~/screenshots/'
+## window screenshoot [shift+PrnScr]
+bindsym shift+Print exec scrot -u u-'%s_$wx$h.png' -e 'mv $f ~/screenshots/'
+## select windows screenshoot [Mod+Shift+s]
+bindsym --release $mod+shift+s exec scrot -s w-'%s_$wx$h.png' -e 'mv $f ~/screenshots/cut/'
+
+## M+S+Delete lock
+bindsym $mod+shift+Delete exec "i3lock -d -c 000000"
+
+exec --no-startup-id xset s off &
