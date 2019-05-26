@@ -14,25 +14,24 @@ run linkConfFiles.sh
 
 ## Bindings
 
-| open term         | Mod+Shift+Return           |
-| kill win          | Mod+shift+x                |
-|                   |                            |
-| run dmenu         | Mod+d                      |
-|                   |                            |
-| quit              | Mod+Shift+q                |
-| reload            | Mod+Shift+c                |
-| restart           | Mod+Shift+r                |
-|                   |                            |
-| move left         | $mod+j focus left          |
-| move right        | $mod+semicolon focus right |
-| move up           | focus up                   |
-| move down         | $mod+k focus down          |
-|                   |                            |
-| fullscreen        | $mod+f                     |
-| fullscreen shot   | PrnScr                     |
-| window screenshot | Shift+PrnScr               |
-| select screenshot | Mod+Shift+s                |
-|                   |                            |
-| lock screen       | $mod+shift+Delete          |
-
-
+| description        | keys             |
+|--------------------|------------------|
+| open term          | Mod+Shift+Return |
+| kill win           | Mod+shift+x      |
+|                    |                  |
+| run dmenu          | Mod+d            |
+| quit               | Mod+Shift+q      |
+| reload             | Mod+Shift+c      |
+| restart            | Mod+Shift+r      |
+|                    |                  |
+| move left          | Mod+j            |
+| move right         | Mod+semicolon    |
+| move up            | Mod+l            |
+| move down          | Mod+k            |
+|                    |                  |
+| fullscreen         | Mod+f            |
+| fullscreen shot    | PrnScr           |
+| window screenshot  | Shift+PrnScr     |
+| select screenshot  | Mod+Shift+s      |
+|                    |                  |
+| lock screen        | Mod+shift+Delete |
