@@ -164,10 +164,9 @@ bindsym $mod+Shift+F10 move container to workspace $ws20
 bindsym $mod+Shift+F11 move container to workspace $ws21
 bindsym $mod+Shift+F12 move container to workspace $ws22
 
-
 ## reload the configuration file
 bindsym $mod+Shift+c reload
-## restart i3 inplace 
+## restart i3 inplace
 bindsym $mod+Shift+r restart
 ## exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec i3-msg exit
@@ -193,7 +192,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-## i3bar 
+## i3bar
 bar {
 	status_command i3status
 	font pango:monospace 8
@@ -219,7 +218,6 @@ hide_edge_borders none
 #hide_edge_borders both
 
 default_orientation horizontal
-
 ## scrot screenshots
 ## fullscreen shoot [PrnScr]
 bindsym Print exec --no-startup-id scrot f-'%s_$wx$h.png' -e 'mv $f ~/screenshots/'
